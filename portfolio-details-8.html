@@ -200,14 +200,18 @@
         </div><!-- /bordertb -->
       </section>
 
-      <!-- 결과 영상 섹션 -->
+       <!-- 결과 영상 섹션 -->
       <section class="port_video container mt-5" style="max-width: 900px; margin: 0 auto;">
-        <video controls autoplay muted loop playsinline class="w-100 rounded">
-          <source src="./assets/img/유튜브영상_프리미어/차섬강_유튜브채널영상만들기.mp4" type="video/mp4">
-          <!-- 브라우저가 mp4/webm을 못 읽을 경우 -->
-          해당 브라우저에서는 영상을 지원하지 않습니다.
-        </video>
-</section>
+        <div class="ratio ratio-16x9 rounded overflow-hidden mb-3">
+          <iframe
+            class="w-100 h-100 border-0"
+            src="https://www.youtube.com/embed/FTp5RSOzAqI"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
 
     </div><!-- /container -->
   </div><!-- /wrap2 -->
