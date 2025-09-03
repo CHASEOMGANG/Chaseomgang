@@ -1701,3 +1701,11 @@ section,
   font-weight: 700;    /* 굵게 */
   color: #0B3D2E;      /* 색상 (브랜드 딥그린) */
 }
+
+@media (max-width:1200px) {
+  #typing{font-size: 65px;}
+}
+
+@media (max-width:800px) {
+  #typing{font-size: 45px;}
+}
