@@ -1697,15 +1697,10 @@ section,
 }
 
 #typing {
-  font-size: 100px;     /* 글자 크기 */
-  font-weight: 700;    /* 굵게 */
-  color: #0B3D2E;      /* 색상 (브랜드 딥그린) */
-}
-
-@media (max-width:1200px) {
-  #typing{font-size: 65px;}
-}
-
-@media (max-width:800px) {
-  #typing{font-size: 45px;}
+  /* 최소 45px, 화면 너비에 따라 유동, 최대 100px */
+  font-size: clamp(40px, calc(5vw + 40px), 100px);
+  font-weight: 700;
+  color: #0B3D2E;        /* 브랜드 딥그린 */
+  line-height: 1.3;      /* 큰 제목은 줄간격 살짝 타이트 */
+  text-wrap: balance;    /* 긴 제목 줄바꿈 균형 (지원 브라우저에서만 적용) */
 }
