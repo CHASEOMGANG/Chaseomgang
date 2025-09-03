@@ -11,8 +11,8 @@
 }
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Domine",  sans-serif;
-  --nav-font: "Quicksand",  sans-serif;
+  --heading-font: "Pretendard",  sans-serif;
+  --nav-font: "Pretendard",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -22,19 +22,19 @@
   --heading-color: #3b434a; /* Color for headings, subheadings and title throughout the website */
 
   --accent-color-cha: #ff2727;
-  --accent-color: #ffbb27; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #1E6F50; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffbb27; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #000000;  /* The default color of the main navmenu links */
+  --nav-hover-color: #1E6F50; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffbb27; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #1E6F50; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -102,7 +102,7 @@ h6 {
 .php-email-form .sent-message {
   display: none;
   color: #ffffff;
-  background: #059652;
+  background: #1E6F50;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -208,6 +208,19 @@ h6 {
   padding: 12px 0;
 }
 
+.scrolled .header .navmenu a {
+  color: #ffffff;   /* 흰색으로 변경 */
+}
+
+.scrolled .header .navmenu a:hover {
+  color: var(--nav-hover-color); /* hover 시 강조색 */
+}
+
+/* 스크롤 후에도 active(현재 섹션) 메뉴는 노란색 */
+.scrolled .header .navmenu a.active {
+  color: var(--nav-hover-color);
+}
+
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
@@ -239,10 +252,10 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 13px;
+    font-size: 16px;
     text-transform: uppercase;
     font-family: var(--nav-font);
-    font-weight: 400;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -552,35 +565,46 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
+/* Scroll Top 버튼 공통 */
 .scroll-top {
   position: fixed;
-  visibility: hidden;
-  opacity: 0;
   right: 15px;
-  bottom: -15px;
-  z-index: 99999;
-  background-color: var(--accent-color-cha);
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-
-.scroll-top i {
-  font-size: 24px;
-  color: var(--contrast-color);
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color-cha), transparent 20%);
-  color: var(--contrast-color);
+  bottom: 15px;
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0B3D2E;   /* 기본 배경: 초록 */
+  color: #fff;           /* 기본 아이콘: 흰색 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .scroll-top.active {
-  visibility: visible;
   opacity: 1;
-  bottom: 15px;
+  visibility: visible;
+}
+
+.scroll-top i {
+  color: inherit;  /* 버튼 color 따라감 */
+  transition: color .3s, transform .3s;
+  font-size: 24px; /* 화살표 크기 */
+}
+
+/* hover 효과 */
+.scroll-top:hover {
+  background: #fff;              /* 배경 흰색 */
+  border: 1px solid #0B3D2E;     /* 테두리 초록 */
+  transform: scale(1.1);         /* 살짝 확대 */
+}
+
+.scroll-top:hover i {
+  color: #0B3D2E;                /* 화살표 초록 */
+  transform: scale(1.1);
 }
 
 /*--------------------------------------------------------------
@@ -662,7 +686,9 @@ section,
   padding: 30px 0;
   margin-bottom: 30px;
   position: relative;
-  color: #059652;
+  font-size: 14px;     /* 기본보다 살짝 작게 */
+  color: #333333;   /* 다크 그레이로 변경 */
+  line-height: 1.6;    /* 가독성 유지 */
 }
 
 .section-title h2 {
@@ -673,7 +699,7 @@ section,
   padding-bottom: 0;
   position: relative;
   z-index: 2;
-  color: blue;
+  color: #1E6F50;   /* 그린 */
 }
 
 .section-title span {
@@ -713,7 +739,7 @@ section,
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: 120px 0 60px 0;
+  padding: 70px 0 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -742,9 +768,10 @@ section,
   z-index: 3;
 }
 
-.hero h2 {
+/*  섬강차 메인글씨부분 */
+.hero h2 {  
   margin: 0;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 56px;
 }
@@ -795,8 +822,8 @@ section,
 --------------------------------------------------------------*/
 .about .content h2 {
   font-weight: 700;
-  font-size: 50px;
-  text-align: center;
+  font-size: 40px;
+  text-align: left;
 }
 
 .about .content ul {
@@ -804,21 +831,16 @@ section,
   padding: 0;
 }
 
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
 .about .content ul strong {
   margin-right: 10px;
 }
 
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: var(--accent-color);
-  line-height: 0;
+/* 한 줄 기준선 정렬 + 줄바꿈 */
+.about .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 /*--------------------------------------------------------------
@@ -1531,4 +1553,151 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/* About custom text 들여쓰기 */
+.about .content p {
+  margin-left: 15px;
+}
+
+/* 2) sub-list는 반드시 다음 줄로 내려가서 꽉 차게 */
+.about .content ul li .sub-list {
+  flex-basis: 100%;       /* 다음 줄 전체 차지 */
+  margin: 6px 0 0 26px;   /* 제목/아이콘보다 살짝 들여쓰기 */
+  padding: 0;
+  list-style: none;
+}
+
+.about .content ul li .sub-list li {
+  margin-bottom: 4px;     /* 항목 간 간격 */
+}
+
+@media (min-width: 992px) {
+.about .content .col-lg-6 {
+  min-height: 220px; /* 숫자는 적당히 조정 */
+}}
+
+/* 태블릿/모바일(991.98px 이하)에서는 자동 높이 */
+@media (max-width: 991.98px) {
+  .about .content .col-lg-6 {
+    min-height: auto;
+  }
+}
+
+.about .content li strong {
+  font-size: 20px;   /* 원하는 크기 (기본보다 크게) */
+  font-weight: 700;  /* 굵게 */
+}
+
+.about .content ul li i {
+  margin-right: 8px;
+  font-size: 0.95em;   /* 제목 크기 변화에 비례 */
+  line-height: 1;
+  position: relative;
+  top: 0.2em;          /* 아이콘을 살짝 아래로 */
+}
+
+/* 아이콘(노란 화살표) 미세 보정 — 색상까지 여기서 통일 */
+.about .content ul li i {
+  margin-right: 8px;
+  font-size: 1em;
+  line-height: 1;
+  position: relative;
+  top: 0.12em;          /* 0 ~ 0.20em 사이에서 필요시 조정 */
+  color: var(--accent-color);
+}
+
+/* 소제목 타이포(굵기/크기/라인높이) */
+.about .content li strong {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Portfolio 카드: 둥근 사각 + 일정 비율 + 커버 */
+.portfolio .portfolio-item .portfolio-content {
+  position: relative;
+  border-radius: 20px;
+  background: #fff;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 비율 박스 */
+}
+
+/* About 섹션: 위/아래 구분선 */
+#about {
+  border-top: 1px solid #ddd;     /* 위쪽 줄 */
+  border-bottom: 1px solid #ddd;  /* 아래쪽 줄 */
+  padding-top: 40px;              
+  padding-bottom: 40px;
+  margin-top: 40px;               
+  margin-bottom: 40px;
+}
+
+/* Graphic 섹션: 아래 구분선 */
+#graphic {
+  border-bottom: 1px solid #ddd;  /* 아래쪽 줄 */
+  padding-bottom: 40px;           
+  margin-bottom: 40px;
+}
+
+.portfolio .portfolio-item .portfolio-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;     /* 이미지 꽉 채우기 */
+  display: block;
+}
+
+/* 그래픽 & 비디오 카드 공통 크기 */
+#graphic .portfolio-item .portfolio-content,
+#video .portfolio-item .portfolio-content {
+  height: 300px;   /* 원하는 높이로 조정 (예: 140px → 120px) */
+}
+
+#graphic .portfolio-item .portfolio-content img,
+#video .portfolio-item .portfolio-content img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-caption {
+  margin-top: 10px; /* 이미지와 제목 사이 여백 */
+}
+
+#graphic,
+#video {
+  padding-left: 40px;   /* 좌측 여백 */
+  padding-right: 40px;  /* 우측 여백 */
+}
+
+/* 보유 역량 아이콘 (PNG/SVG 공통) */
+.about .content .skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;      /* 아이콘 사이 간격 */
+  margin-left: 26px;   /* 본문 들여쓰기와 맞춤 */
+  padding: 0;
+  list-style: none;
+}
+
+.about .content .skills-icons img,
+.about .content .skills-icons svg {
+  width: 48px !important;
+  height: 48px !important;
+  display: block;
+  vertical-align: middle; /* 미세 정렬 */
+}
+
+/* 만약 아이콘에 img-fluid가 붙어있을 때 강제 고정 */
+.about .content .skills-icons img.img-fluid {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+#typing {
+  font-size: 100px;     /* 글자 크기 */
+  font-weight: 700;    /* 굵게 */
+  color: #0B3D2E;      /* 색상 (브랜드 딥그린) */
 }

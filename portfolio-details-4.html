@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>차섬강의 포트폴리오</title>
+  <meta name="description" content="차섬강의 포트폴리오">
+  <meta name="keywords" content="html,css,js,javascript,bootstrap">
+  <meta name="author" content="차섬강">
+
+  <!-- Favicons 만들기 -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- 선택: 간단한 색/여백 보정 (원하면 port.css로 옮겨도 OK) -->
+  <style>
+    :root {
+      --brand: #0B3D2E;
+    }
+    body { font-family: "Pretendard Std", "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+    h1 a, h2, h3 { color: var(--brand); text-decoration: none; }
+    .main.btn-home {
+      position: fixed; right: 16px; top: 16px; z-index: 50;
+      width: 44px; height: 44px; border-radius: 50%;
+      display:flex; align-items:center; justify-content:center;
+      background: var(--brand); color:#fff; border:0;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+    .main.btn-home:hover { opacity:.9; }
+    .wrap2 { padding-top: 20px; padding-bottom: 20px; }
+    .port02 .bordertb { border-top:2px solid #ccc; border-bottom:2px solid #ccc; }
+    .port02 h2 { font-weight:800; margin-bottom: .5rem; }
+    .port02 h3 { font-weight:700; margin-bottom: 1rem; }
+    .port02 p { line-height: 1.8; }
+    .portcon .tt { font-weight:700; margin: .25rem 0 0; color:#333; }
+    .portcon .ttt { margin: 0; color:#555; }
+    footer { margin-top: 60px; }
+
+    .detailpage .dot {
+      width: 8px; 
+      height: 8px;
+      border-radius: 50%;
+      background: #0B3D2E;
+      display: inline-block;
+    }
+
+    /* detailpage 전용: 점 + 텍스트 한 줄 정렬 */
+    .detailpage .meta{
+      display:flex;
+      align-items:center;
+      gap:8px;             /* 점-텍스트 간격 */
+      flex-wrap:wrap;      /* 공간 부족 시만 줄바꿈 */
+    }
+
+    .detailpage .meta .tt{
+      margin: 0;
+      line-height: 1.4;
+      font-weight: 700;
+      color: #333;
+    }
+    .detailpage .meta .ttt{
+      flex-basis: 100%;  /* ⬅️ 항상 다음 줄로 내려감 */
+      margin:0 0 0 16px;            /* p 기본 여백 제거 */
+      line-height:1.4;     
+    }
+   /* 상단 UI/UX 제목 */
+    h1.my-3 {
+      font-size: 20px;   /* 글자 크기 줄이기 */
+      font-weight: 600;
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    h1.my-3 {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    h1.my-3 { color: var(--brand); }
+
+    /* Scroll Top 버튼 스타일 */
+    .scroll-top {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      z-index: 99;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #0B3D2E;   /* 기본 색 (짙은 초록) */
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .scroll-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .scroll-top:hover {
+      background: #fff;       /* hover 시 배경 흰색 */
+      color: #0B3D2E;         /* 아이콘 색상 초록 */
+      border: 1px solid #0B3D2E; /* hover 시 테두리 */
+      transform: scale(1.1);  /* 살짝 커짐 */ 
+    }
+
+    .home-link {
+      position: fixed;
+      right: 16px;
+      top: 16px;
+      z-index: 50;
+      font-family: var(--nav-font);   /* navmenu와 같은 폰트 */
+      font-weight: 700;               /* 메뉴랑 굵기 맞추기 */
+      font-size: 16px;                /* 메뉴와 크기 동일 */
+      color: #000;                    /* 기본: 검은색 */
+      text-decoration: none;          /* 밑줄 제거 */
+      transition: color 0.3s;
+    }
+
+    .home-link:hover {
+      color: var(--brand);            /* hover 시 녹색 (#0B3D2E) */
+      text-decoration: none;          /* 밑줄 없음 */
+    }
+  </style>
+</head>
+
+<body class="detailpage">
+  <div class="wrap2">
+    <div class="container">
+
+      <!-- 상단 타이틀 (타이핑 제거, 클릭 시 메인으로) -->
+      <h1 class="my-3"><i class="bi bi-chevron-right"></i> 리플릿</h1>
+
+      <!-- 홈 버튼(우상단 고정) -->
+      <a href="index.html" class="home-link">HOME</a>
+
+      <!-- ABOUT(프로젝트 설명) -->
+      <section class="about mt-0 port02">
+        <div class="bordertb py-5">
+          <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <h2>편집 디자인</h2>
+            </div>
+            <div class="col-lg-8">
+              <h3>센텀 주간보호센터</h3>
+              <p>
+                <strong>센텀 주간보호센터 리플릿</strong>은 어르신 돌봄과 가족의 여유를 주제로, <strong>그린&화이트 컬러톤</strong>으로 안정감과 신뢰를 표현했습니다. <strong>손과 하트 아이콘</strong>으로 보호·사랑의 메시지를 시각화하고, <strong>사진과 인포그래픽</strong>(일과표·서비스 아이콘)으로 가독성을 높였습니다. 구성은 센터 소개, 연락처와 오시는 길, 무료 체험 안내, <strong>하루 일과표</strong>와 <strong>서비스 안내</strong>(건강 관리, 식사·간식, 인지 활동, 목욕, 차량 운행)까지 담아, “<strong>어르신의 일상에 건강을, 가족의 하루에 여유를</strong>”이라는 메시지를 전합니다.
+              </p>
+
+              <div class="row portcon mt-4 g-3">
+                <div class="col-sm-4">
+                  <div class="meta">
+                    <span class="dot"></span>
+                      <p class="tt">작업기간</p>
+                      <p class="ttt">3일</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="meta">
+                    <span class="dot"></span>
+                    <p class="tt">기여도</p>
+                    <p class="ttt">1인 프로젝트</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="meta">
+                    <span class="dot"></span>
+                    <p class="tt">프로그램</p>
+                    <p class="ttt">Adobe Photoshop<br>Adobe Illustrator</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /col-lg-8 -->
+          </div><!-- /row -->
+        </div><!-- /bordertb -->
+      </section>
+
+      <!-- 결과 이미지 섹션 -->
+      <section class="port_img container mt-5" style="max-width: 900px; margin: 0 auto;">
+        <!-- <div class="text mb-4">
+          <h3 class="mb-2">작업 결과</h3>
+          <p class="text-muted mb-0">브랜딩 결과물 샘플</p>
+        </div> -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_01.jpg" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_04.jpg" alt="" class="img-fluid rounded">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_02.jpg" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_03.jpg" alt="" class="img-fluid rounded">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_06.jpg" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_07.jpg" alt="" class="img-fluid rounded">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_09.jpg" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_10.jpg" alt="" class="img-fluid rounded">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_05.jpg" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 mb-4">
+              <img src="./assets/img/리플릿_포토샵/리플릿_목업_08.jpg" alt="" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div><!-- /container -->
+  </div><!-- /wrap2 -->
+
+  <footer class="bg-dark text-white text-center py-3">
+    <span>Copyright</span> <strong class="px-1 sitename">차섬강</strong> <span>All Rights Reserved</span>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- (선택) jQuery: 필요 없으면 제거 가능 -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+    <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- 디테일 전용: 스크롤탑 토글/동작 JS -->
+  <script>
+  (function () {
+    const btn = document.getElementById('scroll-top');
+    if (!btn) return;
+
+    const toggle = () => {
+      if (window.scrollY > 80) btn.classList.add('active');
+      else btn.classList.remove('active');
+    };
+
+    window.addEventListener('scroll', toggle);
+    toggle(); // 로드 시 한 번 체크
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+  </script>
+</body>
+</html>

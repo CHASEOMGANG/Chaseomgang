@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Seomgang Cha Portfolio</title>
+  <title>차섬강의 포트폴리오</title>
   <meta name="description" content="차섬강의 포트폴리오">
   <meta name="keywords" content="html,css,js,javascript,bootstrap">
   <meta name="author" content="차섬강">
@@ -17,6 +17,10 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Pretendard 추가 -->
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,17 +41,17 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> 이미지해서 로고로 하는게좋음-->
-        <h1 class="sitename cha-font">SeomgangCha</h1>
+        <img src="./assets/img/logo.png" alt="">
+        <!-- <h1 class="sitename cha-font">SeomgangCha</h1> -->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#skill">Skill</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#graphic">Graphic</a></li>
+          <li><a href="#video">Video</a></li>
+
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -65,29 +69,22 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <!-- sns 지워도됨 -->
-      <div class="header-social-links">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      </div>
-
+      <!-- sns 지워도됨,지움 -->
     </div>
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+    <section id="hero" class="hero section">
 
       <div class="container text-center" data-aos="fade-up" data-aos-delay="300">
-        <h2>Seomgang Cha</h2>
-        <p>저는 차섬강입니다</p>
+        <p>
+          <span id="typing"></span>
+        </p>
         <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
       </div>
 
@@ -100,43 +97,65 @@
       <div class="container section-title" data-aos="fade-up">
         <span class="description-title">About me</span>
         <h2>About Me</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
+        <div class="row gy-4">
+          <div class="col-lg-5">
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-8 content">
-            <h2>UI/UX Designer &amp; Web Developer.</h2>
+          <div class="col-lg-7 content">
+            <h2>차섬강</h2>
             <p class="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              010-0000-0000 <br>
+              000@naver.com <br>
+              1993.00.00
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>0 May 0000</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Busan, South Korea</span></li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <strong>학력/교육</strong>
+                      <ul class="sub-list">                    
+                        <li>00대학교 00학과 졸업</li>
+                        <li>헬스케어 웹콘텐츠 구축 전문가 양성과정</li>
+                      </ul>
+                  </li>
+                  
+                  <li><i class="bi bi-chevron-right"></i>
+                    <strong>활동 및 경험</strong>
+                      <ul class="sub-list">                    
+                        <li>0000</li>
+                      </ul>
+                  </li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>00</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <strong>면허/자격증</strong>
+                      <ul class="sub-list">
+                        <li>2종보통 운전면허</li>
+                        <!-- <li>간호사 면허</li> -->
+                        <li>웹디자인개발기능사 / 컴퓨터그래픽기능사</li>
+                      </ul>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <strong>보유 역량</strong>
+                      <ul class="sub-list skills-icons">
+                         <li><img src="./assets/img/Illustrator.svg" alt="Illustrator" title="Illustrator"></li>
+                         <li><img src="./assets/img/Photoshop.svg" alt="Photoshop" title="Photoshop"></li>
+                         <li><img src="./assets/img/Premiere Pro.svg" alt="Premiere Pro" title="Premiere Pro"></li>
+                         <li><img src="./assets/img/After Effects.svg" alt="After Effects" title="After Effects"></li>
+                         <li><img src="./assets/img/Figma.svg" alt="Figma" title="Figma"></li>
+                      </ul>
+                  </li>
               </div>
             </div>
-            <p class="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            </p>
           </div>
         </div>
 
@@ -144,289 +163,150 @@
 
     </section><!-- /About Section -->
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
+    <!-- Graphic Section -->
+    <section id="graphic" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Muy Resume</span>
-        <h2>My Resume</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Brandon Johnson</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Master of Fine Arts &amp; Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-              <h5>2010 - 2014</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Services Section -->
-    <section id="skill" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">My Skill</span>
-        <h2>My Skill</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-              <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-              <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-              <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Portfolio</span>
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <span class="description-title">Graphic</span>
+        <h2>Graphic</h2>
+        <p>브랜드 성격과 콘텐츠 목적에 맞춰 다양한 그래픽을 기획하였으며,  
+          <strong>색감의 조화</strong>와 <strong>안정된 구도</strong>,  
+          그리고 <strong>스토리가 담긴 디자인</strong>을 구현했습니다.</p>
       </div><!-- End Section Title -->
 
       <div class="container-fluid">
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-app">디자인</li>
             <li data-filter=".filter-product">영 상</li>
             <li data-filter=".filter-branding">피그마</li>
             <li data-filter=".filter-books">WEB</li>
-          </ul><!-- End Portfolio Filters -->
+          </ul>End Portfolio Filters -->
 
-          <div class="row g-0 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row g-5 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-
-
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content">
+                <img src="./assets/img/portfolio/1.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
 
-                  <a href="assets/img/portfolio/1.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="./assets/img/portfolio/1.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
 
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="portfolio-details-1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
+               <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>웹서비스 디자인</h4>
+                <p>UI/UX</p>
+              </div>
+            </div><!-- End Portfolio Item 1 -->
+
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content">
                 <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
 
                   <!-- <a href="https://youtu.be/Q5gl3fAhhh0?si=-PXPn9CcQsX3qH3Y" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> 유튜브영상 가져오기-->
 
-                  <a href="./assets/img/portfolio/65562-515098354.mp4" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="./assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <!-- 위는 영상 파일로 가져오기 -->
 
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="portfolio-details-2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>웹 디자인</h4>
+                <p>홈페이지</p>
+              </div>
+            </div><!-- End Portfolio Item 2 -->
+
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content">
                 <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="portfolio-details-3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>브랜딩 디자인</h4>
+                <p>로고, 명함, 간판, 패키지</p>
+              </div>
+            </div><!-- End Portfolio Item 3 -->
+
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content">
                 <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="portfolio-details-4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>편집 디자인</h4>
+                <p>리플릿</p>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div><!-- End Portfolio Item 4 -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/app-1.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="assets/img/portfolio/app-1.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details-5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>패키지 디자인</h4>
+                <p>캐릭터/굿즈</p>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div><!-- End Portfolio Item 5 -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content">
+                <img src="./assets/img/portfolio/app-2.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="./assets/img/portfolio/app-2.png" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details-6.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>디지털 콘텐츠 디자인</h4>
+                <p>상세페이지</p>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div><!-- End Portfolio Item 6 -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/branding-2.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="assets/img/portfolio/branding-2.png" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details-7.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>디지털 콘텐츠 디자인</h4>
+                <p>카드뉴스</p>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+            </div><!-- End Portfolio Item 7 -->
 
           </div><!-- End Portfolio Container -->
 
@@ -434,193 +314,109 @@
 
       </div>
 
-    </section><!-- /Portfolio Section -->
+    </section><!-- /Graphic Section -->
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
+    <!-- Video Section -->
+    <section id="video" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Gallery</span>
-        <h2>Gallery</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <span class="description-title">Video</span>
+        <h2>Video</h2>
+        <p><strong>영상의 흐름과 리듬</strong>, <strong>메시지의 전달력</strong>을 고려하여 다양한 콘텐츠를     제작하였으며, 감각적인 <strong>연출</strong>과 몰입감 있는 <strong>스토리</strong>로 시각적 경험을 완성했습니다.</p>
       </div><!-- End Section Title -->
 
-      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+      <div class="container-fluid">
 
-        <div class="row g-0">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+          <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">디자인</li>
+            <li data-filter=".filter-product">영 상</li>
+            <li data-filter=".filter-branding">피그마</li>
+            <li data-filter=".filter-books">WEB</li>
+          </ul>End Portfolio Filters -->
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+          <div class="row g-5 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content">
+                <img src="./assets/img/portfolio/차섬강_유튜브채널영상만들기_썸네일.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                  <a href="./assets/img/portfolio/차섬강_유튜브채널영상만들기.mp4" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                  <a href="portfolio-details-8.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>유튜브 채널 영상</h4>
+                <p>브이로그</p>
+              </div>
+            </div><!-- End Portfolio Item 1 -->
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-7.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content">
+                <img src="./assets/img/portfolio/차섬강_모션그래픽광고만들기02_썸네일.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-8.jpg" class="glightbox" data-gallery="images-gallery">
-                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+                  <!-- <a href="https://youtu.be/Q5gl3fAhhh0?si=-PXPn9CcQsX3qH3Y" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> 유튜브영상 가져오기-->
+
+                  <a href="./assets/img/portfolio/차섬강_모션그래픽광고만들기02.mp4" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <!-- 위는 영상 파일로 가져오기 -->
+
+                  <a href="portfolio-details-9.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>모션그래픽 광고</h4>
+                <p>브랜드 홍보 </p>
+              </div>
+            </div><!-- End Portfolio Item 2 -->
+
+            <div class="col-lg-4 col-md-6 col-12 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content">
+                <img src="./assets/img/portfolio/차섬강_모션그래픽광고만들기01_썸네일.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="./assets/img/portfolio/차섬강_모션그래픽광고만들기01.mp4" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details-10.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+
+              <!-- 이미지 밑 설명 텍스트 -->
+              <div class="portfolio-caption">
+                <h4>타이포그래피 광고</h4>
+                <p>제품 홍보</p>
+              </div>
+            </div><!-- End Portfolio Item 3 -->
+          </div><!-- End Portfolio Container -->
 
         </div>
 
       </div>
 
-    </section><!-- /Gallery Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Contact</span>
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-geo-alt"></i>
-              <h3>Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center info-item-borders">
-              <i class="bi bi-telephone"></i>
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
-              <h3>Email Us</h3>
-              <p>info@example.com</p>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <form data-aos="fade-up" data-aos-delay="300">
-          <div class="row gy-4">
-
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">            
-              <button type="submit" class="btn btn-info">Send Message</button>
-              <button type="reset" class="btn btn-info">Reset Message</button>
-            </div>
-
-          </div>
-        </form><!-- End Contact Form -->
-
-      </div>
-
-    </section><!-- /Contact Section -->
+    </section><!-- /Video Section -->
 
   </main>
 
   <footer id="footer" class="footer position-relative dark-background">
-    <div class="container">
-      <h3 class="sitename">Laura Thomson<br></h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">SeomgangCha</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
+  <div class="container">
+    <div class="copyright">
+      <span>Copyright</span> <strong class="px-1 sitename">차섬강</strong> <span>All Rights Reserved</span>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -637,6 +433,23 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- typed.js 불러오기 + 타이핑 효과 코드 -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      new Typed('#typing', {
+        strings: [
+          '보이지 않는 생각을,<br>보이는 디자인으로<br>디자이너 차섬강입니다.'
+        ],
+        typeSpeed: 70,
+        backSpeed: 50,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+    });
+  </script>
 </body>
 
 </html>
